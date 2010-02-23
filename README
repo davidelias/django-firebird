@@ -1,0 +1,4 @@
+This is a fork from http://code.google.com/p/django-firebird/
+and changed to work with Django 1.2.
+
+Initial support for Firebird post events.
