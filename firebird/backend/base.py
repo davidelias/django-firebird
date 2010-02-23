@@ -140,14 +140,7 @@ class DatabaseOperations(BaseDatabaseOperations):
         return '%s_TR' % util.truncate_name(table_name, self.max_name_length() - 3).upper()
 
 class DatabaseValidation(BaseDatabaseValidation):
-    def validate_field(self, errors, opts, f):
-        if f.get_internal_type() == 'DecimalField':
-            if f.max_digits > 18:
-                f.max_digits = 18
-            if f.decimal_places > 18:
-                f.decimal_places = 18 - (f.max_digits - f.decimal_places)
-            if f.max_digits > 18:
-                f.max_digits = 18
+    pass
 
 class TypeTranslator(object):
     db_charset_code = None
