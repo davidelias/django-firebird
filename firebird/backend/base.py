@@ -156,7 +156,6 @@ class TypeTranslator(object):
             'DATE': self.in_date,
             'TIME': self.in_time,
             'TIMESTAMP': self.in_timestamp,
-            'INTEGER': self.in_integer,
             'FIXED': self.in_fixed,
             'TEXT': self.in_text,
             'TEXT_UNICODE': self.in_unicode,
@@ -192,9 +191,6 @@ class TypeTranslator(object):
             value = value[:24]
         return typeconv_dt.timestamp_conv_in(value)
 
-    def in_integer(self, value):
-        return value
-    
     def in_fixed(self, (value, scale)):
         if value is not None:
             if isinstance(value, basestring):
